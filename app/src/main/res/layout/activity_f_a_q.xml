@@ -4,25 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.DashboardActivity">
+    tools:context=".activities.FAQActivity">
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
+
+    <ExpandableListView
+        android:id="@+id/expendableList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/BottomMenu"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="10sp"
-        android:background="@drawable/bottom_shape_navigation"
-        android:elevation="5dp"
-        android:maxHeight="15sp"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:divider="@android:color/background_light"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/bottom_menu_item" />
+        android:dividerHeight="0.5dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

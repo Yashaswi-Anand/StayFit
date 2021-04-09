@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.ChatFragment">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edMobileLogin"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:hintAnimationEnabled="true"
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+        android:layout_margin="10dp"
+        android:hint="Email"
+        android:textColorHint="#6d4c41">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:id="@+id/edEmailLog"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</FrameLayout>

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.yashanand.stayfit">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.StayFit">
-        <activity android:name=".activities.DashboardActivity"></activity>
+        <activity android:name=".activities.SettingActivity"></activity>
+        <activity android:name=".activities.FAQActivity" />
+        <activity android:name=".activities.VariousExercise" />
+        <activity android:name=".activities.DashboardActivity" />
         <activity android:name=".activities.RegistrationActivity" />
         <activity android:name=".activities.LoginActivity" />
         <activity android:name=".activities.IntroViewPagerActivity" />
