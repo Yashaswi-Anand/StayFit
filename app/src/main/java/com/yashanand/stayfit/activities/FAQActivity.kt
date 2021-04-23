@@ -14,6 +14,9 @@ class FAQActivity : AppCompatActivity() {
         setContentView(R.layout.activity_f_a_q)
 
         title = "FrequentlyAskedQuestion"
+        supportActionBar?.setHomeButtonEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         var expandableListView = findViewById<ExpandableListView>(R.id.expendableList)
         if (expandableListView != null) {
             val listData = data
@@ -50,5 +53,9 @@ class FAQActivity : AppCompatActivity() {
             }*/
         }
 
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

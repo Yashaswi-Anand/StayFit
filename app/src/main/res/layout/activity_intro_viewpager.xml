@@ -90,10 +90,10 @@
             app:layout_constraintVertical_bias="0.705" />
 
         <TextView
+            android:visibility="gone"
             android:id="@+id/next_intro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
             android:backgroundTint="#fff"
             android:elevation="15dp"
             android:text=" Next "

@@ -1,93 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#194E423F"
     tools:context=".activities.LoginActivity">
+
+    <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+        android:id="@+id/l1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:neomorph_view_type="rectangular"
+        app:neomorph_shadow_type="outer"
+        app:neomorph_elevation="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:neomorph_background_color="@color/background"
+        app:neomorph_shadow_color="@color/white"
+        app:neomorph_highlight_color="#915C4A">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Welcome To StayFit "
+            android:textColorHint="#6d4c41"
+            android:textSize="20sp" />
+
+
+    </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
 
     <ImageView
         android:id="@+id/loginLogo"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginTop="80dp"
-        android:src="@drawable/yoga4"
-        app:layout_constraintHorizontal_bias="0.497"
+        android:src="@raw/logo"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+       app:layout_constraintTop_toBottomOf="@+id/l1" />
 
-
-    <EditText
-        android:id="@+id/LoginEmail"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:layout_marginTop="40dp"
-        android:hint=" Email "
-        android:textSize="25dp"
-        app:layout_constraintHorizontal_bias="0.6"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginLogo" />
+        app:layout_constraintTop_toBottomOf="@+id/loginLogo">
 
-    <EditText
-        android:id="@+id/LoginPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:layout_marginTop="68dp"
-        android:hint=" Password "
-        android:textSize="25dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LoginEmail" />
 
-    <TextView
-        android:id="@+id/ForgetPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="36dp"
-        android:layout_marginRight="28dp"
-        android:text="Forget Password ?"
-        android:textColor="#ff00"
-        android:textSize="25sp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/LoginPassword" />
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Email"
+            android:textColor="#3749B6"
+            app:hintAnimationEnabled="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loginLogo">
 
-    <com.google.android.material.button.MaterialButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="50dp"
-        android:ems="7"
-        android:text="Login"
-        android:onClick="loginBtn"
-        android:id="@+id/LoginBtn"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        app:cornerRadius="20dp"
-        android:backgroundTint="@color/green"
-        app:layout_constraintTop_toBottomOf="@+id/ForgetPassword"
-        android:layout_marginTop="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-         />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/LoginEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_email"
+                android:drawablePadding="14dp"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/NewRegistration"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="50dp"
-        android:text="New User, Registration"
-        android:textColor="#ffffff"
-        android:textSize="20sp"
-        android:backgroundTint="@color/blue"
-        app:cornerRadius="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/LoginBtn"
-        android:layout_marginTop="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="Password"
+            android:textColor="#3749B6"
+            app:hintAnimationEnabled="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loginLogo">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/LoginPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_password"
+                android:drawablePadding="14dp"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:neomorph_view_type="rectangular"
+            android:layout_margin="5dp"
+            app:neomorph_shadow_type="inner"
+            app:neomorph_elevation="5dp"
+            android:layout_gravity="right"
+            app:neomorph_corner_radius="10dp"
+            app:neomorph_background_color="@color/background"
+            app:neomorph_shadow_color="@color/white"
+            app:neomorph_highlight_color="@color/white">
+
+        <TextView
+            android:id="@+id/ForgetPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="5dp"
+            android:text="Forget Password ?"
+            android:textColor="#3749B6"
+            android:textSize="18sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/LoginPassword" />
+
+        </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/LoginBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#915C4A"
+            android:elevation="10dp"
+            android:ems="7"
+            android:onClick="loginBtn"
+            android:text="Login"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:cornerRadius="15dp" />
+
+        <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:neomorph_view_type="rectangular"
+            android:layout_margin="5dp"
+            app:neomorph_shadow_type="outer"
+            app:neomorph_elevation="2dp"
+            app:neomorph_corner_radius="10dp"
+            app:neomorph_background_color="@color/background"
+            app:neomorph_shadow_color="#915C4A"
+            app:neomorph_highlight_color="@color/white">
+
+            <TextView
+                android:id="@+id/NewRegistration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="50dp"
+                android:layout_margin="5dp"
+                android:text="New User, Registration here? "
+                android:textColor="#6A2AC8"
+                android:textSize="20sp" />
+
+
+        </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
+
+
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

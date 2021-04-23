@@ -31,15 +31,12 @@ class DailyExerciseAdapter(var context: Context,var listener: MyListener, var it
             holder.itemView.findViewById<TextView>(R.id.daily_item).text = item
             holder.itemView.findViewById<CardView>(R.id.daily_cardview_item).setOnClickListener {
                // Toast.makeText(context, "move to next page.", Toast.LENGTH_SHORT).show()
-
-                if (itemClick < 1){
-                    context.startActivity(Intent(context, VariousExercise::class.java))
-
-                }else if(itemClick >=1){
-                    listener.onItemClicked()
-                   //Toast.makeText(context, "Count is : ${itemClick}", Toast.LENGTH_SHORT).show()
+                context.startActivity(Intent(context, VariousExercise::class.java))
+                if("Rest" == item){
+                   // Toast.makeText(context, item, Toast.LENGTH_SHORT).show()
+                    context.startActivity(Intent(context, VariousExercise::class.java).putExtra(item,"Rest"))
                 }
-                itemClick++
+
             }
         }
         override fun getItemCount(): Int {

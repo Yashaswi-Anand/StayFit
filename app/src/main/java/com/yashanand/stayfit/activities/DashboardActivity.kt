@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
+import android.view.WindowManager
 import android.widget.ImageView
 import android.widget.Toast
 import com.bumptech.glide.Glide
@@ -21,10 +22,11 @@ class DashboardActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         setContentView(R.layout.activity_dashboard)
 
         supportActionBar?.hide()
-
+        Glide.with(this).asGif().load(R.drawable.chat_img).into(chatImage)
         supportFragmentManager.beginTransaction().replace(R.id.frameLayout,HomeFragment()).commit()
 
         BottomMenu.setOnNavigationItemSelectedListener{ item ->
@@ -37,11 +39,9 @@ class DashboardActivity : AppCompatActivity() {
                     supportFragmentManager.beginTransaction().replace(R.id.frameLayout,ChallengeFragment()).commit()
                     supportActionBar?.hide()
                 }
-                R.id.chat ->{
-                    supportFragmentManager.beginTransaction().replace(R.id.frameLayout,ChatFragment()).commit()
-                    supportActionBar?.hide()
-                }
                 R.id.profile ->{
+                    chatImage.visibility=View.VISIBLE
+                    cross_icon.visibility= View.VISIBLE
                     supportFragmentManager.beginTransaction().replace(R.id.frameLayout,ProfileFragment()).commit()
                     supportActionBar?.hide()
                 }
@@ -58,5 +58,20 @@ class DashboardActivity : AppCompatActivity() {
                 checked= TRUE
             }
         }
+    }
+
+    fun ImageForChat(view: View) {
+        Toast.makeText(this,"shoe the chay",Toast.LENGTH_SHORT).show()
+        supportActionBar?.title = "Username"
+        chatImage.visibility=View.GONE
+        cross_icon.visibility= View.GONE
+        BottomMenu.visibility = View.GONE
+        supportFragmentManager.beginTransaction().replace(R.id.frameLayout,ChatFragment()).commit()
+
+    }
+
+    fun cross_icon(view: View) {
+        chatImage.visibility = View.GONE
+        cross_icon.visibility= View.GONE
     }
 }

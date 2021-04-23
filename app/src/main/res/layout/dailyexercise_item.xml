@@ -3,54 +3,56 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:elevation="500dp"
+    android:elevation="1dp"
     android:id="@+id/daily_cardview_item"
     android:padding="5dp"
-    android:layout_margin="5dp"
-    app:cardCornerRadius="15dp">
+    android:layout_margin="2dp"
+    app:cardCornerRadius="5dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:padding="8dp"
         android:layout_height="match_parent">
-
-        <ImageView
-            android:id="@+id/item_image"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:src="@drawable/yoga1"/>
 
         <TextView
             android:id="@+id/daily_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
             android:layout_marginLeft="10dp"
             android:elevation="7dp"
-            android:gravity="center"
             android:padding="3dp"
             android:text="Day 1"
-            android:textColor="#2F669C"
+            android:textColor="@color/blue"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/item_image" />
+            app:layout_constraintLeft_toLeftOf="parent"
+            />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginLeft="10dp"
             android:elevation="7dp"
             android:gravity="center"
-            android:hint="15 Exercise"
-            android:padding="5dp"
-            android:textColor="#2F669C"
-            android:textSize="13sp"
+            android:padding="3dp"
+            android:text="10 Exercise "
+            android:textSize="15sp"
             android:textStyle="bold"
-            app:layout_constraintLeft_toRightOf="@id/item_image"
-            app:layout_constraintTop_toBottomOf="@id/daily_item" />
+            app:layout_constraintTop_toBottomOf="@+id/daily_item"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_progress"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -38,7 +38,7 @@ class ChallengeFragment : Fragment(), MyListener {
         val list= ArrayList<String>()
         for (i in 1..30){
             if(i%6==0){
-                list.add("Day $i,Today is Rest.")
+                list.add("Rest")
             }else {
                 list.add("Day $i")
             }

@@ -7,6 +7,7 @@ import android.util.Log
 import android.util.Patterns
 import android.view.View
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -15,6 +16,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.yashanand.stayfit.R
 import com.yashanand.stayfit.fragments.ProfileFragment
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_registration.*
 
 class RegistrationActivity : AppCompatActivity() {
@@ -30,21 +32,24 @@ class RegistrationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration)
 
-        auth = FirebaseAuth.getInstance()
-        val user = auth.currentUser
-        if(user != null){  // if user is not authenticate ,send him to sign in
-            startActivity(Intent(this,DashboardActivity::class.java))
+        Glide.with(this).asGif().load(R.raw.logo).into(regLogo)
+
+            auth = FirebaseAuth.getInstance()
+            val user = auth.currentUser
+            if (user != null) {  // if user is not authenticate ,send him to sign in
+                startActivity(Intent(this, DashboardActivity::class.java))
+            }
+
+            val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build()
+
+            googleSignInClient = GoogleSignIn.getClient(this, gso)
+
+        back_signup.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
         }
-
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
-            .requestEmail()
-            .build()
-
-        googleSignInClient = GoogleSignIn.getClient(this, gso)
-
-        supportActionBar?.setHomeButtonEnabled(true)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     fun registrationBtn(view: View) {
@@ -136,11 +141,6 @@ class RegistrationActivity : AppCompatActivity() {
                     Log.d("SignInActivity", "signInWithCredential:failure")
                 }
             }
-    }
-    //---------------------------------------------------------
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
     }
 
 

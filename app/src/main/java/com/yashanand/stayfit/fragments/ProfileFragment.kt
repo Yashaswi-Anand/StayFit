@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
@@ -83,14 +84,12 @@ class ProfileFragment : Fragment() {
                 null
             )
         builder.setView(customLayout)
+
        /* //set message for alert dialog
         //builder.setMessage("Do you want to logout...")
         //builder.setIcon(android.R.drawable.ic_dialog_alert)
         //performing positive action
-        builder.setPositiveButton("Yes"){ dialogInterface, which ->
-            //activity?.let { ActivityCompat.finishAffinity(it) }
-            //Toast.makeText(applicationContext,"clicked yes",Toast.LENGTH_LONG).show()
-        }
+
         //performing cancel action
         builder.setNeutralButton("Cancel"){ dialogInterface, which ->
             // Toast.makeText(applicationContext,"clicked cancel\n operation cancel",Toast.LENGTH_LONG).show()
@@ -101,8 +100,12 @@ class ProfileFragment : Fragment() {
         }*/
         // Create the AlertDialog
         val alertDialog: AlertDialog = builder.create()
+        builder.setPositiveButton("Yes"){ dialogInterface, which ->
+            Toast.makeText(activity,"clicked yes",Toast.LENGTH_LONG).show()
+            alertDialog.dismiss()
+        }
         // Set other dialog properties
-        alertDialog.setCancelable(false)
+        alertDialog.setCancelable(true)
         alertDialog.show()
     }
     private fun share(){

@@ -11,14 +11,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.StayFit">
-        <activity android:name=".activities.SettingActivity"></activity>
+        <receiver
+            android:name=".TimerExpiredReceiver"
+            android:enabled="true"
+            android:exported="false"></receiver>
+
+        <activity
+            android:name=".activities.StartExercise"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.StayFit.NoActionBar" />
+        <activity android:name=".activities.SettingActivity" />
         <activity android:name=".activities.FAQActivity" />
         <activity android:name=".activities.VariousExercise" />
         <activity android:name=".activities.DashboardActivity" />
-        <activity android:name=".activities.RegistrationActivity" />
+        <activity
+            android:name=".activities.RegistrationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.StayFit.NoActionBar" />
         <activity android:name=".activities.LoginActivity" />
-        <activity android:name=".activities.IntroViewPagerActivity" />
-        <activity android:name=".activities.SplashScreen">
+        <activity
+            android:name=".activities.IntroViewPagerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.StayFit.NoActionBar" />
+        <activity
+            android:name=".activities.SplashScreen"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.StayFit.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

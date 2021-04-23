@@ -21,11 +21,11 @@ class IntroViewPagerActivity : AppCompatActivity() {
     private val introAdapterClass =
         IntroAdapterClass(
             listOf(
-                IntroData("First Page Intro ", R.drawable.yoga0),
-                IntroData("Second Page Intro ", R.drawable.yoga2),
-                IntroData("Third Page Intro ", R.drawable.yoga3),
-                IntroData("fourth Page Intro ", R.drawable.yoga4),
-                IntroData("fifth Page Intro ", R.drawable.yoga1)
+                IntroData("Don't limit your challenges, challenge your limits.", R.drawable.yoga0),
+                IntroData("To enjoy the glow of Good Health,you must exercise. ", R.drawable.yoga2),
+                IntroData("Exercise should be regarded as tribute to the heart.", R.drawable.yoga3),
+                IntroData("Fitness isn't about being better than someone else.It's about being better than you used to be.", R.drawable.yoga4),
+                IntroData("Do something today that your future self will thank you for.", R.drawable.yoga1)
             )
         )
 

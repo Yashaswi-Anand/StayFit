@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Patterns
 import android.view.View
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.yashanand.stayfit.R
@@ -22,6 +23,7 @@ class LoginActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         supportActionBar?.hide()
+        Glide.with(this).asGif().load(R.raw.logo).into(loginLogo)
         NewRegistration.setOnClickListener {
             Intent(this, RegistrationActivity::class.java).also { startActivity(it) }
         }
